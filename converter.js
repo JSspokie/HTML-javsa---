@@ -20,7 +20,6 @@ function convert(){
        exists.remove()
     }
 
-
     table.id = "calcTable";
     
     array2D.forEach((row, rowIndex) => {
