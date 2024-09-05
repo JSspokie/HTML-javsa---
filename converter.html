@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Exchange rate calculator</title>
+</head>
+<body>
+    <div class="container">
+        <H1>Exchange rate calculator</H1>
+        <div>
+            <label>Please enter the amount you want to 
+                    exchange in ZAR
+                <br>
+                <input id="input" type="number" placeholder="Please Enter amount in ZAR">
+            </label> 
+
+            <br><br><br>
+
+            <table id = 'tmpTable'>
+                <tr><th class=".left_cell">Currency</th>
+                <th class=".center_cell">Todays exchange rate</th>
+                <th class=".right_cell">Amount you will receive</th></tr>
+                
+            </table>
+
+            <tr><div id="tableContainer"></div></tr>
+
+            
+
+
+            <br><br><br>
+
+            <button class="button" onclick="convert()">Convert Currency To ZAR</button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
