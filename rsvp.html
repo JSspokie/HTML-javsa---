@@ -11,31 +11,31 @@
     <h1 style="text-align:  center; font-size: 40px">Bumble's Family 25th Anniversary<br>Invitation</h1>
 
     <br><br>
-    <Form>
+    <Form action="submitFrm()">
     <label class="frmLabel">
         Full Name: <br>
-        <Input class="frmInput" type="text" id="FullName">
+        <Input class="frmInput" type="text" id="FullName" required>
         </label>
     <br>
     <label class="frmLabel">
         Phone Number:<br>
-        <Input class="frmInput" type="tel" id="telnum">
+        <Input class="frmInput" type="tel" id="telnum" required>
     </label><br>
     <label class="frmLabel">
         Email Address: <br>
-        <Input class="frmInput" type="email" id="email">
+        <Input class="frmInput" type="email" id="email" required>
     </label><br>
     <label class="frmLabel">
         Number Of Attendees: <br>
-        <input class="frmInput" type="number" id="numAtt">
+        <input class="frmInput" type="number" id="numAtt" required>
     </label><br>
     <label class="frmLabel">
         Arrival time: <br>
-        <input class="frmInput" type="time" id="arrTime">
+        <input class="frmInput" type="time" id="arrTime" required>
     </label><br>
     <label class="frmLabel">
         Menu Preference: <br>
-        <select class="frmSelection" name="MenuPreference" id="MenuPref">
+        <select class="frmSelection" name="MenuPreference" id="MenuPref" required>
             <option value="none">none</option>
             <option value="vegan">Vegan</option>
             <option value="lacInt">Lactose Intolerant</option>
@@ -45,7 +45,7 @@
 
     <label class="frmLabel">
         Select Table Option: <br>
-        <Select class="frmSelection" name="TableOption" id="tableOption">
+        <Select class="frmSelection" name="TableOption" id="tableOption" required>
             <option value="Table 1">Table 1</option>
             <option value="Table 2">Table 2</option>
             <option value="Table 3">Table 3</option>
@@ -55,12 +55,11 @@
         </Select>
     </label>
     <br>
-    <button class="frmButton" onclick="submitFrm()">Submit</button>
-</Form>
-
-
+    <button class="frmButton" type="submit">Submit</button>    
+    </Form>
+    
 
 </div>
-<script src="rsvp.js"></script>
+    <script src="rsvp.js"></script>
 </body>
 </html>

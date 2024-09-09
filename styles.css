@@ -163,3 +163,11 @@ form
 {
     margin-left: 40px;
 }
+
+img
+{
+    border-radius: 100%;
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+}
