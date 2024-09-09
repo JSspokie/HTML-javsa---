@@ -5,25 +5,39 @@ function play(usrChoice){
     cprNum = Math.round(cprNum);
     cprChoice = arrRPS[cprNum];
 
-    if (usrChoice == 'Rock' && cprChoice == 'Scissors'){
-        resultLabel.textContent = "You WIN!!"
-    } else if (usrChoice == 'Rock' && cprChoice == 'Paper'){
-        resultLabel.textContent = "You LOSE!!"
-    } else if (usrChoice == 'Rock' && cprChoice == 'Rock'){
-        resultLabel.textContent = "It's a tie!!"
-    } else if (usrChoice == 'Scissors' && cprChoice == 'Paper'){
-        resultLabel.textContent = "You WIN!!"
-    } else if (usrChoice == 'Scissors' && cprChoice == 'Rock'){
-        resultLabel.textContent = "You LOSE!!"
-    } else if (usrChoice == 'Scissors' && cprChoice == 'Scissors'){
-        resultLabel.textContent = "It's a tie!!"
-    }  else if (usrChoice == 'Paper' && cprChoice == 'Paper'){
-        resultLabel.textContent = "It's a tie!!"
-    } else if (usrChoice == 'Paper' && cprChoice == 'Rock'){
-        resultLabel.textContent = "You WIN!!"
-    } else if (usrChoice == 'Paper' && cprChoice == 'Scissors'){
-        resultLabel.textContent = "You LOSE!!"
+    // if (usrChoice == 'Rock' && cprChoice == 'Scissors'){
+    //     resultLabel.textContent = "You WIN!!"
+    // } else if (usrChoice == 'Rock' && cprChoice == 'Paper'){
+    //     resultLabel.textContent = "You LOSE!!"
+    // } else if (usrChoice == 'Rock' && cprChoice == 'Rock'){
+    //     resultLabel.textContent = "It's a tie!!"
+    // } else if (usrChoice == 'Scissors' && cprChoice == 'Paper'){
+    //     resultLabel.textContent = "You WIN!!"
+    // } else if (usrChoice == 'Scissors' && cprChoice == 'Rock'){
+    //     resultLabel.textContent = "You LOSE!!"
+    // } else if (usrChoice == 'Scissors' && cprChoice == 'Scissors'){
+    //     resultLabel.textContent = "It's a tie!!"
+    // }  else if (usrChoice == 'Paper' && cprChoice == 'Paper'){
+    //     resultLabel.textContent = "It's a tie!!"
+    // } else if (usrChoice == 'Paper' && cprChoice == 'Rock'){
+    //     resultLabel.textContent = "You WIN!!"
+    // } else if (usrChoice == 'Paper' && cprChoice == 'Scissors'){
+    //     resultLabel.textContent = "You LOSE!!"
+    // } 
+
+    resultLabel.textContent = ""
+
+    if(usrChoice == "Rock"){
+        cprChoice = 'Paper';
+        resultLabel.textContent = "You LOSE! Paper beats rock!"
+    } else if(usrChoice == "Paper"){
+        cprChoice = 'Scissors';
+        resultLabel.textContent = "You LOSE! Scissors beats Paper!"
+    } else if(usrChoice == "Scissors"){
+        cprChoice = 'Rock';
+        resultLabel.textContent = "You LOSE! Rock beats Scissors!"
     } 
+
     
 
 }
