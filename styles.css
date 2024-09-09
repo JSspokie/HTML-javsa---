@@ -134,7 +134,7 @@ td
 {
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 90%;
+    width: 85%;
     height: 30px;
     font-size: medium;
     border-style: solid;
@@ -149,7 +149,7 @@ td
     border-radius: 5px;
     border-style: none;
     margin-top: 5px;
-    width: 90%;
+    width: 85%;
     height: 30px;
 }
 
@@ -157,4 +157,9 @@ td
 {
     background-color: white; 
     color: rgb(256,52,116); 
+}
+
+form
+{
+    margin-left: 40px;
 }
