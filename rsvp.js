@@ -1,14 +1,25 @@
+document.addEventListener('DOMContentLoaded', function(){
+    postValues();
+});
+
 function submitFrm(){
     if (validateForm()==false){
         alert("Please fill in all fields");
         exit();
-    } else {
-        // saveValues();
-        //  postValues();
+    };
 
-        window.location.replace("/succ.html")
-    }
-    
+    transition();
+    saveValues();
+    //postValues();
+
+    //alert(localStorage.getItem("fullname"))
+
+    return false;
+}
+
+function transition(){
+    window.location.pathname = "succ.html";
+    return false;
 }
 
 function validateForm(){
@@ -36,13 +47,13 @@ function saveValues(){
     var MenuPref = document.getElementById('MenuPref').value;
     var TblOption = document.getElementById('tableOption').value;
 
-    localStorage.setItem('fullname', FullName);
-    localStorage.setItem('PhoneNumber', PhoneNumber);
-    localStorage.setItem('Email', Email);
-    localStorage.setItem('NumOfAtt', NumOfAtt);
-    localStorage.setItem('ArrTime', ArrTime);
-    localStorage.setItem('MenuPref', MenuPref);
-    localStorage.setItem('TblOption', TblOption);
+    localStorage.setItem("fullname", FullName);
+    localStorage.setItem("PhoneNumber", PhoneNumber);
+    localStorage.setItem("Email", Email);
+    localStorage.setItem("NumOfAtt", NumOfAtt);
+    localStorage.setItem("ArrTime", ArrTime);
+    localStorage.setItem("MenuPref", MenuPref);
+    localStorage.setItem("TblOption", TblOption);
 }
 
 function postValues(){
@@ -53,7 +64,12 @@ function postValues(){
     const outArrTime = document.getElementById('outArrTime');
     const outMenuPref = document.getElementById('outMenuPref');
     const outTblOption = document.getElementById('outTblOption');
-
-
-    outName.textContent = localStorage.getItem('fullname');
+    
+    outName.textContent = "Full Name: " + localStorage.getItem("fullname");
+    outnum.textContent = "Phone Number: "+localStorage.getItem("PhoneNumber");
+    outMail.textContent = "Email Address: "+localStorage.getItem("Email");
+    outNumAtt.textContent = "Number Of Attendees: "+localStorage.getItem("NumOfAtt");
+    outArrTime.textContent = "Arrival time: "+localStorage.getItem("ArrTime");
+    outMenuPref.textContent = "Menu Preference: "+localStorage.getItem("MenuPref");
+    outTblOption.textContent = "Table Option: "+localStorage.getItem("TblOption");
 }
