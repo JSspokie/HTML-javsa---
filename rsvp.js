@@ -68,7 +68,7 @@ function postValues(){
     
     outName.textContent = "Full Name: " + localStorage.getItem("fullname");
     outnum.textContent = "Phone Number: "+localStorage.getItem("PhoneNumber");
-    outMail.textContent = "Email Address: "+localStorage.getItem("Email");
+    outMail.textContent = "Email: "+localStorage.getItem("Email");
     outNumAtt.textContent = "Number Of Attendees: "+localStorage.getItem("NumOfAtt");
     outArrTime.textContent = "Arrival time: "+localStorage.getItem("ArrTime");
     outMenuPref.textContent = "Menu Preference: "+localStorage.getItem("MenuPref");
@@ -76,39 +76,33 @@ function postValues(){
 }
 
 function confetti(){
-    const duration = 99999999 * 999999999,
-    animationEnd = Date.now() + duration;
-  
-  let skew = 1;
-  
-  function randomInRange(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-  
-  (function frame() {
-    const timeLeft = animationEnd - Date.now(),
-      ticks = Math.max(200, 500 * (timeLeft / duration));
-  
-    skew = Math.max(0.8, skew - 0.001);
-  
-    confetti({
-      particleCount: 5,
-      startVelocity: 0,
-      ticks: ticks,
-      origin: {
-        x: Math.random(),
-        // since particles fall down, skew start toward the top
-        y: Math.random() * skew - 0.2,
-      },
-      colors: ["#ffffff"],
-      shapes: ["circle"],
-      gravity: randomInRange(0.4, 0.6),
-      scalar: randomInRange(0.4, 1),
-      drift: randomInRange(-0.4, 0.4),
-    });
-  
-    if (timeLeft > 0) {
-      requestAnimationFrame(frame);
-    }
-  })();
+  const container = document.getElementById('confetti-container');
+
+  const colors = ['#FF5733', '#33FF57', '#5733FF', '#FF33A6', '#33FFF6'];
+
+  function createConfetti() {
+    const confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.left = `${Math.random() * 100}vw`;
+    confetti.style.top = `-${Math.random() * 100}vh`;
+    confetti.style.width = `${Math.random() * 20 + 10}px`;
+    confetti.style.height = `${Math.random() * 10 + 5}px`;
+    container.appendChild(confetti);
+
+    // Animation
+    confetti.animate([
+        { transform: `translateY(0)`, opacity: 1 },
+        { transform: `translateY(${Math.random() * 100 + 100}vh)`, opacity: 0 }
+    ], {
+        duration: Math.random() * 2000 + 3000,
+        easing: 'linear',
+        fill: 'forwards'
+    }).onfinish = () => {
+        container.removeChild(confetti);
+    };
+}
+
+setInterval(createConfetti, 100);
+
 }
